@@ -135,9 +135,18 @@
     <Compile Include="Entities\Models\Ship.cs" />
     <Compile Include="Enums\CabinCategory.cs" />
     <Compile Include="Enums\Gender.cs" />
+    <Compile Include="Enums\Port.cs" />
     <Compile Include="Migrations\20190426200944_InitialCreate.cs" />
     <Compile Include="Migrations\20190426200944_InitialCreate.designer.cs">
       <DependentUpon>20190426200944_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20190430114946_CabinUpdate.cs" />
+    <Compile Include="Migrations\20190430114946_CabinUpdate.designer.cs">
+      <DependentUpon>20190430114946_CabinUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20190501134502_Update-Cruise.cs" />
+    <Compile Include="Migrations\20190501134502_Update-Cruise.designer.cs">
+      <DependentUpon>20190501134502_Update-Cruise.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\CruiseManagementContextModelSnapshot.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

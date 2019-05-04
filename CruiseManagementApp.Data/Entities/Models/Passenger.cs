@@ -15,5 +15,10 @@ namespace CruiseManagementApp.Data.Entities.Models
         public string Address { get; set; }
         public Gender Gender { get; set; }
         public ICollection<Reservation> Reservations { get; set; }
+
+        public override string ToString()
+        {
+            return $"{FirstName} {LastName}";
+        }
     }
 }

@@ -12,5 +12,8 @@ namespace CruiseManagementApp.Data.Entities.Models
         public int CabinId { get; set; }
         public int CruiseId { get; set; }
         public int PassengerId { get; set; }
+        public Cabin Cabin { get; set; }
+        public Cruise Cruise { get; set; }
+        public Passenger Passenger { get; set; }
     }
 }

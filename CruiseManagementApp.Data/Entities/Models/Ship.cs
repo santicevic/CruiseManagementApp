@@ -12,5 +12,10 @@ namespace CruiseManagementApp.Data.Entities.Models
         public string Name { get; set; }
         public DateTime YearOfAssembly { get; set; }
         public ICollection<Cruise> Cruises { get; set; }
+
+        public override string ToString()
+        {
+            return $"{Name} -- {YearOfAssembly.Year}";
+        }
     }
 }

@@ -15,5 +15,10 @@ namespace CruiseManagementApp.Data.Entities.Models
         public Gender Gender { get; set; }
         public DateTime DateOfBirth { get; set; }
         public ICollection<EmployeeOnCruise> Cruises { get; set; }
+
+        public override string ToString()
+        {
+            return $"{FirstName} {LastName}";
+        }
     }
 }

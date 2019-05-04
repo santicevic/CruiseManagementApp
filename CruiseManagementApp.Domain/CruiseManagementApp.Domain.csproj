@@ -110,6 +110,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\CabinRepository.cs" />
+    <Compile Include="Repositories\CruiseRepository.cs" />
+    <Compile Include="Repositories\EmployeeOnCruiseRepository.cs" />
+    <Compile Include="Repositories\EmployeeRepository.cs" />
+    <Compile Include="Repositories\PassengerRepository.cs" />
+    <Compile Include="Repositories\ReservationRepository.cs" />
+    <Compile Include="Repositories\ShipRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CruiseManagementApp.Data\CruiseManagementApp.Data.csproj">
