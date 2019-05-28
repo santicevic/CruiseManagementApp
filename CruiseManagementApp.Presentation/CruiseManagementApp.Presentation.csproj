@@ -156,6 +156,18 @@
     <Compile Include="UserView\ReservationForms\AddReservation.Designer.cs">
       <DependentUpon>AddReservation.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserView\ReservationForms\EditReservation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserView\ReservationForms\EditReservation.Designer.cs">
+      <DependentUpon>EditReservation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserView\ReservationForms\DeleteReservation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserView\ReservationForms\DeleteReservation.Designer.cs">
+      <DependentUpon>DeleteReservation.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserView\UserViewMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -225,6 +237,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserView\ReservationForms\AddReservation.resx">
       <DependentUpon>AddReservation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserView\ReservationForms\EditReservation.resx">
+      <DependentUpon>EditReservation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserView\ReservationForms\DeleteReservation.resx">
+      <DependentUpon>DeleteReservation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserView\UserViewMain.resx">
       <DependentUpon>UserViewMain.cs</DependentUpon>

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using CruiseManagementApp.Data.Entities;
 using CruiseManagementApp.Data.Entities.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace CruiseManagementApp.Domain.Repositories
 {
@@ -24,11 +25,19 @@ namespace CruiseManagementApp.Domain.Repositories
 
         public List<Reservation> GetAll()
         {
-            return _context.Reservations.ToList();
+            return _context.Reservations
+                .Include(reservation => reservation.Cabin)
+                .Include(reservation => reservation.Cruise)
+                .Include(reservation => reservation.Passenger)
+                .ToList();
         }
 
         public void AddReservation(Reservation reservationToAdd)
         {
+            reservationToAdd.Passenger = _context.Passengers.Find(reservationToAdd.Passenger.Id);
+            reservationToAdd.Cruise = _context.Cruises.Find(reservationToAdd.Cruise.Id);
+            reservationToAdd.Cabin = _context.Cabins.Find(reservationToAdd.Cabin.Id);
+
             _context.Reservations.Add(reservationToAdd);
             _context.SaveChanges();
         }
@@ -65,9 +74,9 @@ namespace CruiseManagementApp.Domain.Repositories
                 return false;
             }
 
-            currentReservation.Cabin = reservationToEdit.Cabin;
-            currentReservation.Cruise = reservationToEdit.Cruise;
-            currentReservation.Passenger = reservationToEdit.Passenger;
+            currentReservation.Cabin = _context.Cabins.Find(reservationToEdit.Cabin.Id);
+            currentReservation.Cruise = _context.Cruises.Find(reservationToEdit.Cruise.Id);
+            currentReservation.Passenger = _context.Passengers.Find(reservationToEdit.Passenger.Id);
 
             _context.SaveChanges();
             return true;

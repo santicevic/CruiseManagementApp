@@ -42,5 +42,17 @@ namespace CruiseManagementApp.Presentation.UserView
             var addReservation = new AddReservation();
             addReservation.ShowDialog();
         }
+
+        private void EditReservationButton_Click(object sender, EventArgs e)
+        {
+            var editReservation = new EditReservation();
+            editReservation.ShowDialog();
+        }
+
+        private void DeleteReservationButton_Click(object sender, EventArgs e)
+        {
+            var removeReservation = new DeleteReservation();
+            removeReservation.ShowDialog();
+        }
     }
 }

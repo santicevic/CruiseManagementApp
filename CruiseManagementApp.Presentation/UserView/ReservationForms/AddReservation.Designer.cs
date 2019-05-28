@@ -35,6 +35,8 @@
             this.cruiseSelectLabel = new System.Windows.Forms.Label();
             this.cabinSelectLabel = new System.Windows.Forms.Label();
             this.saveButton = new System.Windows.Forms.Button();
+            this.priceTextbox = new System.Windows.Forms.TextBox();
+            this.priceLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // passengerSelectCombobox
@@ -44,7 +46,6 @@
             this.passengerSelectCombobox.Name = "passengerSelectCombobox";
             this.passengerSelectCombobox.Size = new System.Drawing.Size(121, 21);
             this.passengerSelectCombobox.TabIndex = 0;
-            this.passengerSelectCombobox.Click += new System.EventHandler(this.OnPassengerSelectionChange);
             // 
             // cruiseSelectCombobox
             // 
@@ -61,6 +62,7 @@
             this.cabinSelectCombobox.Name = "cabinSelectCombobox";
             this.cabinSelectCombobox.Size = new System.Drawing.Size(121, 21);
             this.cabinSelectCombobox.TabIndex = 2;
+            this.cabinSelectCombobox.SelectionChangeCommitted += new System.EventHandler(this.OnCabinSelectChange);
             // 
             // passengerSelectLabel
             // 
@@ -91,7 +93,7 @@
             // 
             // saveButton
             // 
-            this.saveButton.Location = new System.Drawing.Point(61, 145);
+            this.saveButton.Location = new System.Drawing.Point(64, 167);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(75, 23);
             this.saveButton.TabIndex = 6;
@@ -99,11 +101,32 @@
             this.saveButton.UseVisualStyleBackColor = true;
             this.saveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
+            // priceTextbox
+            // 
+            this.priceTextbox.Enabled = false;
+            this.priceTextbox.Location = new System.Drawing.Point(80, 136);
+            this.priceTextbox.Name = "priceTextbox";
+            this.priceTextbox.Size = new System.Drawing.Size(57, 20);
+            this.priceTextbox.TabIndex = 7;
+            this.priceTextbox.Text = "0";
+            this.priceTextbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // priceLabel
+            // 
+            this.priceLabel.AutoSize = true;
+            this.priceLabel.Location = new System.Drawing.Point(12, 139);
+            this.priceLabel.Name = "priceLabel";
+            this.priceLabel.Size = new System.Drawing.Size(39, 13);
+            this.priceLabel.TabIndex = 8;
+            this.priceLabel.Text = "Cijena:";
+            // 
             // AddReservation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(149, 180);
+            this.ClientSize = new System.Drawing.Size(149, 198);
+            this.Controls.Add(this.priceLabel);
+            this.Controls.Add(this.priceTextbox);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.cabinSelectLabel);
             this.Controls.Add(this.cruiseSelectLabel);
@@ -127,5 +150,7 @@
         private System.Windows.Forms.Label cruiseSelectLabel;
         private System.Windows.Forms.Label cabinSelectLabel;
         private System.Windows.Forms.Button saveButton;
+        private System.Windows.Forms.TextBox priceTextbox;
+        private System.Windows.Forms.Label priceLabel;
     }
 }

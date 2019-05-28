@@ -102,6 +102,7 @@
             this.deleteReservationButton.TabIndex = 2;
             this.deleteReservationButton.Text = "Izbriši";
             this.deleteReservationButton.UseVisualStyleBackColor = true;
+            this.deleteReservationButton.Click += new System.EventHandler(this.DeleteReservationButton_Click);
             // 
             // editReservationButton
             // 
@@ -111,6 +112,7 @@
             this.editReservationButton.TabIndex = 1;
             this.editReservationButton.Text = "Uredi";
             this.editReservationButton.UseVisualStyleBackColor = true;
+            this.editReservationButton.Click += new System.EventHandler(this.EditReservationButton_Click);
             // 
             // addReservationButton
             // 

@@ -28,20 +28,8 @@ namespace CruiseManagementApp.Presentation.UserView.ReservationForms
 
             passengerSelectCombobox.DataSource = _passengers.GetAll();
             cabinSelectCombobox.DataSource = _cabins.GetAll();
-            UpdateCruises();
-        }
-
-        private void UpdateCruises()
-        {
-            var selectedPassenger = (Passenger)passengerSelectCombobox.SelectedItem;
-            var cruisesThatPassengerIsNotOn = _cruises.GetAll()
-                .Where(cruise => !_reservations.IsPassengerOnCruise(selectedPassenger.Id, cruise.Id)).ToList();
-
-            cruiseSelectCombobox.DataSource = cruisesThatPassengerIsNotOn;
-        }
-        private void OnPassengerSelectionChange(object sender, EventArgs e)
-        {
-            UpdateCruises();
+            cruiseSelectCombobox.DataSource = _cruises.GetAll();
+            UpdateCruisePrice();
         }
 
         private void SaveButton_Click(object sender, EventArgs e)
@@ -57,5 +45,15 @@ namespace CruiseManagementApp.Presentation.UserView.ReservationForms
             Close();
         }
 
+        private void OnCabinSelectChange(object sender, EventArgs e)
+        {
+            UpdateCruisePrice();
+        }
+
+        private void UpdateCruisePrice()
+        {
+            var selectedCabin = (Cabin)cabinSelectCombobox.SelectedItem;
+            priceTextbox.Text = selectedCabin.Price.ToString();
+        }
     }
 }
