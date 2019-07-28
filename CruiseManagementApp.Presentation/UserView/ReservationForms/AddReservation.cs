@@ -26,9 +26,10 @@ namespace CruiseManagementApp.Presentation.UserView.ReservationForms
             _cruises = new CruiseRepository();
             _cabins = new CabinRepository();
 
-            passengerSelectCombobox.DataSource = _passengers.GetAll();
             cabinSelectCombobox.DataSource = _cabins.GetAll();
             cruiseSelectCombobox.DataSource = _cruises.GetAll();
+            passengerSelectCombobox.DataSource = _passengers
+                .GetPassangersNotOnCruise((Cruise)cruiseSelectCombobox.SelectedItem);
             UpdateCruisePrice();
         }
 
@@ -54,6 +55,12 @@ namespace CruiseManagementApp.Presentation.UserView.ReservationForms
         {
             var selectedCabin = (Cabin)cabinSelectCombobox.SelectedItem;
             priceTextbox.Text = selectedCabin.Price.ToString();
+        }
+
+        private void OnCruiseSelectChange(object sender, EventArgs e)
+        {
+            passengerSelectCombobox.DataSource = _passengers
+               .GetPassangersNotOnCruise((Cruise)cruiseSelectCombobox.SelectedItem);
         }
     }
 }

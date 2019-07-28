@@ -26,8 +26,8 @@ namespace CruiseManagementApp.Presentation.UserView.ReservationForms
             _cruises = new CruiseRepository();
             _cabins = new CabinRepository();
             reservationSelectCombobox.DataSource = _reservations.GetAll();
-            passengerSelectCombobox.DataSource = _passengers.GetAll();
             cruiseSelectCombobox.DataSource = _cruises.GetAll();
+            passengerSelectCombobox.DataSource = _cruises.GetAll();
             cabinSelectCombobox.DataSource = _cabins.GetAll();
             UpdateForm();
         }

@@ -38,6 +38,9 @@
             this.genderLabel = new System.Windows.Forms.Label();
             this.dateOfBirthLabel = new System.Windows.Forms.Label();
             this.warningLabel = new System.Windows.Forms.Label();
+            this.yesRadioButton = new System.Windows.Forms.RadioButton();
+            this.noRadioButton = new System.Windows.Forms.RadioButton();
+            this.fitnessTestPassedLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // firstNameTextbox
@@ -72,6 +75,7 @@
             // 
             // saveButton
             // 
+            this.saveButton.Enabled = false;
             this.saveButton.Location = new System.Drawing.Point(215, 174);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(75, 23);
@@ -124,11 +128,46 @@
             this.warningLabel.Size = new System.Drawing.Size(0, 13);
             this.warningLabel.TabIndex = 9;
             // 
+            // yesRadioButton
+            // 
+            this.yesRadioButton.AutoSize = true;
+            this.yesRadioButton.Location = new System.Drawing.Point(15, 151);
+            this.yesRadioButton.Name = "yesRadioButton";
+            this.yesRadioButton.Size = new System.Drawing.Size(39, 17);
+            this.yesRadioButton.TabIndex = 10;
+            this.yesRadioButton.Text = "Da";
+            this.yesRadioButton.UseVisualStyleBackColor = true;
+            this.yesRadioButton.CheckedChanged += new System.EventHandler(this.OnYesRadioButtonCheckChange);
+            // 
+            // noRadioButton
+            // 
+            this.noRadioButton.AutoSize = true;
+            this.noRadioButton.Checked = true;
+            this.noRadioButton.Location = new System.Drawing.Point(114, 151);
+            this.noRadioButton.Name = "noRadioButton";
+            this.noRadioButton.Size = new System.Drawing.Size(39, 17);
+            this.noRadioButton.TabIndex = 11;
+            this.noRadioButton.TabStop = true;
+            this.noRadioButton.Text = "Ne";
+            this.noRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // fitnessTestPassedLabel
+            // 
+            this.fitnessTestPassedLabel.AutoSize = true;
+            this.fitnessTestPassedLabel.Location = new System.Drawing.Point(11, 128);
+            this.fitnessTestPassedLabel.Name = "fitnessTestPassedLabel";
+            this.fitnessTestPassedLabel.Size = new System.Drawing.Size(188, 13);
+            this.fitnessTestPassedLabel.TabIndex = 12;
+            this.fitnessTestPassedLabel.Text = "Zaposlenim ima lječničku svjedodžbu?";
+            // 
             // AddEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(313, 206);
+            this.Controls.Add(this.fitnessTestPassedLabel);
+            this.Controls.Add(this.noRadioButton);
+            this.Controls.Add(this.yesRadioButton);
             this.Controls.Add(this.warningLabel);
             this.Controls.Add(this.dateOfBirthLabel);
             this.Controls.Add(this.genderLabel);
@@ -140,7 +179,7 @@
             this.Controls.Add(this.lastNameTextbox);
             this.Controls.Add(this.firstNameTextbox);
             this.Name = "AddEmployee";
-            this.Text = "AddEmployee";
+            this.Text = "Dodavanje zaposlenika";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -158,5 +197,8 @@
         private System.Windows.Forms.Label genderLabel;
         private System.Windows.Forms.Label dateOfBirthLabel;
         private System.Windows.Forms.Label warningLabel;
+        private System.Windows.Forms.RadioButton yesRadioButton;
+        private System.Windows.Forms.RadioButton noRadioButton;
+        private System.Windows.Forms.Label fitnessTestPassedLabel;
     }
 }

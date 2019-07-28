@@ -46,5 +46,10 @@ namespace CruiseManagementApp.Presentation.AdminView.EmployeeForms
                 warningLabel.Text = validationResult;
             }
         }
+
+        private void OnYesRadioButtonCheckChange(object sender, EventArgs e)
+        {
+            saveButton.Enabled = yesRadioButton.Checked ? true : false;
+        }
     }
 }

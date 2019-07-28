@@ -46,6 +46,13 @@ namespace CruiseManagementApp.Domain.Repositories
             return false;
         }
 
+        public List<Passenger> GetPassangersNotOnCruise(Cruise selctedCruise)
+        {
+            return _context.Passengers.Where(passenger => 
+            !_context.Reservations.Any(reservation => 
+            reservation.PassengerId == passenger.Id && reservation.CruiseId == selctedCruise.Id)).ToList();
+        }
+
         public bool EditPassenger(Passenger passengerToEdit)
         {
             var currentPassenger = _context.Passengers.Find(passengerToEdit.Id);

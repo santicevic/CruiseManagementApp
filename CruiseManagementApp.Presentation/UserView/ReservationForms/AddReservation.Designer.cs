@@ -54,6 +54,7 @@
             this.cruiseSelectCombobox.Name = "cruiseSelectCombobox";
             this.cruiseSelectCombobox.Size = new System.Drawing.Size(121, 21);
             this.cruiseSelectCombobox.TabIndex = 1;
+            this.cruiseSelectCombobox.SelectionChangeCommitted += new System.EventHandler(this.OnCruiseSelectChange);
             // 
             // cabinSelectCombobox
             // 
